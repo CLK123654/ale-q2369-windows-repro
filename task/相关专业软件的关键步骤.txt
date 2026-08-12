@@ -1,0 +1,8 @@
+1.建立BerlinSettlementTimetable并实现自动区间、手工区间和序列化接口
+2.在插件中注册Timetable，并在DAG中设置Europe/Berlin、catchup和单活跃运行
+3.用pendulum按本地午夜生成区间边界和次日本地运行时刻
+4.通过DagBag加载DAG并核对Timetable对象、任务依赖和导入错误
+5.读取UTC电表区间并用zoneinfo转换结算日期、钟点、偏移和fold
+6.生成时段主键，核对重复钟点不会覆盖且源区间保持唯一
+7.按结算日汇总时段数、电表行数和MWh
+8.导出调度区间、时段明细、日汇总、时区转换明细和工程结构报告

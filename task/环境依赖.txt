@@ -1,0 +1,7 @@
+支持Windows11。主软件为Apache Airflow2.10.5，在Windows11主机的WSL2和Ubuntu24.04中运行，不称为原生Windows软件。需要保留Airflow、Python、WSL和发行版版本信息。
+
+辅助工具可使用PowerShell7、Python3.12、UTF-8文本编辑器和CSV查看器。任务使用Airflow自带的Timetable、DagBag和TaskFlow能力，不需要外部数据库、浏览器或消息服务。Apache Airflow按Apache License2.0使用。
+
+软件安装阶段可以联网，开始处理输入后只访问本地文件。建议至少2核CPU、4GB可用内存和1GB可写磁盘空间。输入目录保持只读，Airflow工程目录、结果目录和临时AIRFLOW_HOME需要写入权限。
+
+主要风险是把本地自然日当成固定24小时、混用UTC与本地日期、丢失fold、首次运行边界错位、手工触发取错结算日、插件未注册，以及DAG解析阶段读写业务文件。
